@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="try_embedded_python.ZPM">
+  <Document name="wsock-nodejs.ZPM">
     <Module>
-      <Name>try_embedded_python</Name>
-      <Version>0.0.2</Version>
+      <Name>wsock-nodejs</Name>
+      <Version>0.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="rccpy.AoC20.CLS"/>
-      <FileCopy Name="python/" Target="${mgrdir}python/"/>
-      <FileCopy Name="stream/" Target="${mgrdir}stream/"/>
+      <Resource Name="rccjs.WSockNodeJs.CLS"/>
+      <FileCopy Name="src/js/" Target="${libdir}js/"/>
     </Module>
   </Document>
 </Export>
