@@ -5,23 +5,28 @@ USER root
 RUN \
   apt-get update && \
   apt-get -y install nano  && \
-  apt install python3 python3-pip -y
+  apt-get -y install curl gnupg
 
-# Make python available in cmd
-RUN export PATH=${PATH}:/usr/bin/python3
-RUN /bin/bash -c "source ~/.bashrc"
+RUN curl -sL https://deb.nodesource.com/setup_10.x  | bash -
+
+RUN apt-get -y install nodejs
+
+COPY api /usr/irissys/lib/js
+
+RUN  cd /usr/irissys/lib/js  && \
+   npm install intersystems-iris-native && \
+   npm install websocket
 
 WORKDIR /opt/irisapp
-RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp
+RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp && \
+    chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /usr/irissys/lib/js
 
 USER ${ISC_PACKAGE_MGRUSER}
 
-COPY  stream stream
-COPY  python python
 COPY  src src 
 COPY  module.xml module.xml
 COPY  iris.script /tmp/iris.script
 
 RUN iris start IRIS \
-    && iris session IRIS < /tmp/iris.script \
+	&& iris session IRIS < /tmp/iris.script \
     && iris stop IRIS quietly
