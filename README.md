@@ -15,7 +15,7 @@ The logic of the example hasn't changed.
 - you send it and see how the replies are dropping in > __S__    
 - stop service  and exit > __X__    
 
-Different from the original example, the service is now running in background.
+Different from the original example, the service is now running in background.  
 So its output is invisible but writes a log file that can be view by the action > __L__
 
 ## Prerequisites
