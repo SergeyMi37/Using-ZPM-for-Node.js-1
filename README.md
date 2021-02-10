@@ -1,11 +1,21 @@
-Inspired by ZPM managing Python modules I moved the idea forward to do the same for  
-my examples with IRIS Native API for Node.js.  
-And that worked perfect after getting all pieces in place.  
-With Node.js you face the challenge to install additional __required__ components  
-need to be installed with sufficien privileges using npm. This step is covered in Dockerfile.  
-But all your .js code is handled by __ZPM.__   
+Inspired by  @Evgeny Shvarov  and his recent article  
+__[Deploying InterSystems IRIS Embedded Python Solutions with ZPM Package Manager](https://community.intersystems.com/post/deploying-intersystems-iris-embedded-python-solutions-zpm-package-manager)__   
+I propagated the idea forward to do the same also for modules in Node.js.  
+The case is based on my example of [IRIS Native API for Node.js](https://community.intersystems.com/post/websocket-client-js-iris-native-api-docker-micro-server)    
 
-The logic is the same as with my other examples. So there is not much surprise.  
+With Node.js you face the challenge to install additional __required__ components that need to be  
+installed with sufficient privileges using npm.  
+This step and adjusting access rights are covered in Dockerfile.
+But all your .js modules are handled by ZPM.
+
+The logic of the example hasn't changed.  
+- the Nodes.js service is started  
+- the selected address of the echo server is passed to it  
+- you compose the text to be transmitted  
+- you send it and see how the replies are dropping in  
+- stop service  and exit  
+Differently from the original example, the service is now running in  background.
+So its output is invisible but writes a log file that can be view by the action command __L__
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
