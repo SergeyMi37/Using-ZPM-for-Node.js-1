@@ -4,8 +4,8 @@ I propagated the idea forward to do the same also for modules in Node.js.
 The case is based on my example of [IRIS Native API for Node.js](https://community.intersystems.com/post/websocket-client-js-iris-native-api-docker-micro-server)    
 
 With Node.js you face the challenge to install additional __required__ components that need to be  
-installed with sufficient privileges using npm.  
-This step and adjusting access rights are covered in Dockerfile.
+installed with sufficient privileges using __npm__.  
+This step and adjusting access rights are covered in Dockerfile.  
 But all your .js modules are handled by ZPM.
 
 The logic of the example hasn't changed.  
