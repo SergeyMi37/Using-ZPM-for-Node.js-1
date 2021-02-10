@@ -14,6 +14,7 @@ The logic of the example hasn't changed.
 - you compose the text to be transmitted  
 - you send it and see how the replies are dropping in  
 - stop service  and exit  
+
 Differently from the original example, the service is now running in  background.
 So its output is invisible but writes a log file that can be view by the action command __L__
 
