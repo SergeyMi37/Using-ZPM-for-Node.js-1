@@ -10,13 +10,13 @@ But all your .js modules are handled by ZPM.
 
 The logic of the example hasn't changed.  
 - the Nodes.js service is started  
-- the selected address of the echo server is passed to it __E__  
-- you compose the text to be transmitted __N__  
-- you send it and see how the replies are dropping in __S__    
-- stop service  and exit __X__    
+- the selected address of the echo server is passed to it > __E__  
+- you compose the text to be transmitted > __N__  
+- you send it and see how the replies are dropping in > __S__    
+- stop service  and exit > __X__    
 
 Different from the original example, the service is now running in background.
-So its output is invisible but writes a log file that can be view by the action command __L__
+So its output is invisible but writes a log file that can be view by the action > __L__
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
