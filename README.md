@@ -10,7 +10,7 @@ __UPDATE__
 - Some optical cosmetics and runtime improvements.  
 
 ~~With Node.js you face the challenge to install additional __required__ components that need to be  
-installed with sufficient privileges using __npm__.~~
+installed with sufficient privileges using __npm__.~~  
 This step and adjusting access rights are covered in Dockerfile.  
 But all your .js modules are handled by ZPM.
 
