@@ -5,8 +5,9 @@ The case is based on my example of [IRIS Native API for Node.js](https://communi
 
 __UPDATE__  
 - All additional __required__ Node.js components can now be installed at runtime.  
-  Only _intersystems-iris-native_ module is pre-installed during Docker build.  
+  Only _intersystems-iris-native_ module is pre-installed during Docker build.    
 - When Node.js is launched its Process id is displayed for debugging purpose. 
+- Some optical cosmetics and runtime improvements.  
 
 ~~With Node.js you face the challenge to install additional __required__ components that need to be  
 installed with sufficient privileges using __npm__.~~
