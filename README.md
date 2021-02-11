@@ -3,8 +3,13 @@ __[Deploying InterSystems IRIS Embedded Python Solutions with ZPM Package Manage
 I propagated the idea forward to do the same also for modules in Node.js.  
 The case is based on my example of [IRIS Native API for Node.js](https://community.intersystems.com/post/websocket-client-js-iris-native-api-docker-micro-server)    
 
-With Node.js you face the challenge to install additional __required__ components that need to be  
-installed with sufficient privileges using __npm__.  
+__UPDATE__  
+- All additional __required__ Node.js components can now be installed at runtime.  
+  Only _intersystems-iris-native_ module is pre-installed during Docker build.  
+- When Node.js is launched its Process id is displayed for debugging purpose. 
+
+~~With Node.js you face the challenge to install additional __required__ components that need to be  
+installed with sufficient privileges using __npm__.~~
 This step and adjusting access rights are covered in Dockerfile.  
 But all your .js modules are handled by ZPM.
 
@@ -48,6 +53,7 @@ $ docker-compose exec iris iris session iris "##class(rccjs.WSockNodeJs).Run()"
 
 *** Welcome to WebSocket by Node.js Native API Demo ***
 
+********* Node.js process id = 1650  *********
 
 Known Hosts (*=Exit) [1]:
 1  ws://echo.websocket.org/
