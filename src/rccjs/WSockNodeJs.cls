@@ -1,5 +1,6 @@
 Class rccjs.WSockNodeJs [ Not ProcedureBlock ]
 {
+
 /// manage data for Websocket by Global ^ZSocketRun
 ///  0 = Pause
 ///  1 = Process Input
@@ -23,15 +24,18 @@ Z		quit
 	quit
 
 listen
-	do {
+	for  {
 		set top=+$g(^ZSocketOut(0))
-		write !,"******* "_top_" Replies *******",! 
+		if top write !,"******* "_top_" Replies *******",! 
 		for n=1:1:top {
 			write n,?5,$g(^ZSocketOut(n)),!
 		}
-		read x#1:5 
-		return:x="*"
-	} while top<^ZSocketIn(0)
+		if (top<^ZSocketIn(0)) {
+			read x#1:5 
+			if x'="*" continue
+			}
+		quit
+		}
 	quit
 	
 control
@@ -126,10 +130,16 @@ lorem
 /// kick nodes service	
 ClassMethod Start()
 {
-	do $system.License.Login("_SYSTEM")
-	set ^ZSocketRun=0
-	set libdir=$system.Util.InstallDirectory()_"lib"
+    do $system.License.Login("_SYSTEM")
+    set required="websocket"
+		,libdir=$system.Util.InstallDirectory()_"lib"
+    if '$d(^node.js(required)) {
+	    do $zf(-1,"cd "_libdir_"/js/ && npm install websocket")
+	    set ^node.js(required)=""
+    }
+	set ^ZSocketRun=0	
 	do $zf(-100,"/ASYNC/STDOUT=wsock.log","node",libdir_"/js/WsockIris.js")
+	write "********* Node.js process id = "_$ZC_"  *********",!
 	quit
 }
 
