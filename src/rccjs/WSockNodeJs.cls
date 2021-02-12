@@ -5,6 +5,7 @@ Class rccjs.WSockNodeJs [ Not ProcedureBlock ]
 ///  0 = Pause
 ///  1 = Process Input
 /// -1 = Exit Client
+/// 
 ClassMethod Run()
 {
 	write !!,"*** Welcome to WebSocket by Node.js Native API Demo ***",!!
