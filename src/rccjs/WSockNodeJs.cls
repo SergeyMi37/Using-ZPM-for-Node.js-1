@@ -142,7 +142,6 @@ ClassMethod Start()
 	write "********* Node.js process id = "_$ZC_"  *********",!
 	quit
 }
-
 /// stop node service and release
 ClassMethod Stop()
 {
