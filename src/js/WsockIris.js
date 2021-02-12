@@ -7,6 +7,7 @@
 //   1 => sent to echo server
 //  ^ZSocketRun(0)= echo server => "wss://echo.websocket.org/"
 //
+
 const irisnative = require('intersystems-iris-native')
 const W3CWebSocket = require('websocket').w3cwebsocket;
 
