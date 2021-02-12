@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------------  
 
-Inspired by  @Evgeny Shvarov  and his recent article  
+Inspired by  @Evgeny Shvarov  and his recent article      
 __[Deploying InterSystems IRIS Embedded Python Solutions with ZPM Package Manager](https://community.intersystems.com/post/deploying-intersystems-iris-embedded-python-solutions-zpm-package-manager)__   
 I propagated the idea forward to do the same also for modules in Node.js.  
 The case is based on my example of [IRIS Native API for Node.js](https://community.intersystems.com/post/websocket-client-js-iris-native-api-docker-micro-server)    
