@@ -6,7 +6,7 @@
       <Version>0.0.2</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="rccjs.WSockNodeJs.CLS"/>
+      <Resource Name="rccjs.PKG"/>
       <FileCopy Name="src/js/" Target="${libdir}js/"/>
     </Module>
   </Document>
